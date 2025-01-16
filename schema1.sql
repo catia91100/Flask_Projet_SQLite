@@ -5,7 +5,7 @@ created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
 nom  TEXT NOT NULL,
 prenom TEXT NOT NULL,
 adresse TEXT NOT NULL,
-  );
+);
   
 DROP TABLE IF EXISTS livres;
 CREATE TABLE livres (
@@ -27,7 +27,7 @@ id_utilisateurs
 id_livres
 date_emprunt
 date_retour
-  );
+);
 
 
 
