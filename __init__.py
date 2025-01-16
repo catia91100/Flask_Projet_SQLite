@@ -80,6 +80,15 @@ def utilisateurs():
     data = cursor.fetchall()
     conn.close()
     return render_template('read_data1.html', data=data)
+
+@app.route('/emprunts/')
+def emprunts():
+    conn = sqlite3.connect('database1.db')
+    cursor = conn.cursor()
+    cursor.execute('SELECT * FROM emprunts;')
+    data = cursor.fetchall()
+    conn.close()
+    return render_template('emprunts.html', data=data)
                                                                                                                                  
 if __name__ == "__main__":
   app.run(debug=True)
