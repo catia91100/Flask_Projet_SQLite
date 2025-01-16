@@ -63,7 +63,7 @@ def fiche_nom(post_nom):
             # Rendre le template HTML et transmettre les données
             return render_template('read_data.html', data=data)
 
-@app.route('/livres')
+@app.route('/livres/')
 def livres():
     conn = sqlite3.connect('database1.db')
     cursor = conn.cursor()
