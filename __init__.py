@@ -71,53 +71,6 @@ def livres():
     data = cursor.fetchall()
     conn.close()
     return render_template('livres.html', data=data)
-"""
-@app.route('/utilisateurs')
-def utilisateurs():
-    conn = sqlite3.connect('database1.db')
-    cursor = conn.cursor()
-    cursor.execute('SELECT * FROM utilisateurs;')
-    data = cursor.fetchall()
-    conn.close()
-    return render_template('read_data1.html')
-    
-@app.route('/emprunts')
-def utilisateurs():
-    conn = sqlite3.connect('database1.db')
-    cursor = conn.cursor()
-    cursor.execute('SELECT * FROM emprunts;')
-    data = cursor.fetchall()
-    conn.close()
-    return render_template('emprunts.html')
-    
-@app.route('/consultation/')
-def ReadBDD():
-    conn = sqlite3.connect('database.db')
-    cursor = conn.cursor()
-    cursor.execute('SELECT * FROM clients;')
-    data = cursor.fetchall()
-    conn.close()
-    return render_template('read_data.html', data=data)
-
-@app.route('/enregistrer_client', methods=['GET'])
-def formulaire_client():
-    return render_template('formulaire.html')  # afficher le formulaire
-
-@app.route('/enregistrer_client', methods=['POST'])
-def enregistrer_client():
-    nom = request.form['nom']
-    prenom = request.form['prenom']
-
-
-    # Connexion à la base de données
-    conn = sqlite3.connect('database.db')
-    cursor = conn.cursor()
-
-    # Exécution de la requête SQL pour insérer un nouveau client
-    cursor.execute('INSERT INTO clients (created, nom, prenom, adresse) VALUES (?, ?, ?, ?)', (1002938, nom, prenom, "ICI"))
-    conn.commit()
-    conn.close()
-    return redirect('/consultation/')  # Rediriger vers la page d'accueil après l'enregistrement
-     """                                                                                                                                  
+                                                                                                                                 
 if __name__ == "__main__":
   app.run(debug=True)
