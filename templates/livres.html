@@ -15,7 +15,6 @@
             <th>genre</th>
             <th>annee-publication</th>
             <th>stock_total</th>
-            <th>stock_disponible</th>
           
         </tr>
         {% for row in data %}
@@ -25,6 +24,8 @@
             <td>{{ row[2] }}</td>
             <td>{{ row[3] }}</td>
             <td>{{ row[4] }}</td>
+            <td>{{ row[5] }}</td>
+            <td>{{ row[6] }}</td>
         </tr>
         {% endfor %}
     </table>
