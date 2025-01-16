@@ -1,14 +1,19 @@
-1. Utilisateurs (Users)
--------------------------
+DROP TABLE IF EXISTS utilisateurs;
+CREATE TABLE utilisateurs (
+id INTEGER PRIMARY KEY AUTOINCREMENT,
+created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
 - id_user (PK)
 - nom
 - prenom
 - email (unique)
 - mot_de_passe
 - role (Admin ou Utilisateur)
-
-2. Livres (Books)
--------------------------
+  )
+  
+DROP TABLE IF EXISTS livres;
+CREATE TABLE livres (
+id INTEGER PRIMARY KEY AUTOINCREMENT,
+created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
 - id_livre (PK)
 - titre
 - auteur
@@ -16,36 +21,19 @@
 - annee_publication
 - stock_total
 - stock_disponible
-
-3. Emprunts (Borrowings)
--------------------------
+  )
+  
+DROP TABLE IF EXISTS Emprunts;
+CREATE TABLE Emprunts (
+id INTEGER PRIMARY KEY AUTOINCREMENT,
+created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
 - id_emprunt (PK)
 - id_user (FK, Utilisateurs.id_user)
 - id_livre (FK, Livres.id_livre)
 - date_emprunt
 - date_retour_prevue
 - date_retour_effective (NULL si pas encore retourné)
+  )
 
-4. Notifications (Notifications) [Optionnel]
--------------------------
-- id_notification (PK)
-- id_user (FK, Utilisateurs.id_user)
-- id_emprunt (FK, Emprunts.id_emprunt)
-- message
-- date_notification
-- status (non_lue/lue)
 
-5. Recommandations (Recommendations) [Optionnel]
--------------------------
-- id_recommendation (PK)
-- id_user (FK, Utilisateurs.id_user)
-- id_livre (FK, Livres.id_livre)
-- date_recommendation
-
-6. Rapports Statistiques (BookStatistics) [Optionnel]
--------------------------
-- id_statistique (PK)
-- id_livre (FK, Livres.id_livre)
-- total_emprunts
-- dernier_emprunt (date)
 
