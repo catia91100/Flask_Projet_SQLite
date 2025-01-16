@@ -71,6 +71,15 @@ def livres():
     data = cursor.fetchall()
     conn.close()
     return render_template('livres.html', data=data)
+
+@app.route('/utilisateurs/')
+def utilisateurs():
+    conn = sqlite3.connect('database1.db')
+    cursor = conn.cursor()
+    cursor.execute('SELECT * FROM utilisateurs;')
+    data = cursor.fetchall()
+    conn.close()
+    return render_template('read_data1.html', data=data)
                                                                                                                                  
 if __name__ == "__main__":
   app.run(debug=True)
