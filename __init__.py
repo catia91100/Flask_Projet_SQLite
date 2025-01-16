@@ -39,20 +39,6 @@ def authentification():
 
     return render_template('formulaire_authentification.html', error=False)
 
-@app.route('/fiche_nom', methods=['GET', 'POST'])
-def fiche_nom():
-    if request.method == 'POST':
-        # Vérifier les identifiants
-        if request.form['username'] == 'user' and request.form['password'] == '12345': # password à cacher par la suite
-            session['authentifie'] = True
-            # Rediriger vers la route lecture après une authentification réussie
-            return redirect(url_for('lecture'))
-        else:
-            # Afficher un message d'erreur si les identifiants sont incorrects
-            return render_template('formulaire_authentification.html', error=True)
-
-    return render_template('formulaire_authentification.html', error=False)
-
 @app.route('/fiche_client/<int:post_id>')
 def Readfiche(post_id):
     conn = sqlite3.connect('database.db')
@@ -70,14 +56,13 @@ def lirefiche(post_nom):
     cursor.execute('SELECT * FROM clients WHERE nom = ?', (post_nom,))
     data = cursor.fetchall()
     conn.close()
-     # Rendre le template HTML et transmettre les données
-                return render_template('read_data.html', data=data)
+        # Rendre le template HTML et transmettre les données
+        return render_template('read_data.html', data=data)
      if not est_authentifie():
         # Rediriger vers la page d'authentification si l'utilisateur n'est pas authentifié
         return redirect(url_for('authentification'))
  
     
-
 @app.route('/consultation/')
 def ReadBDD():
     conn = sqlite3.connect('database.db')
