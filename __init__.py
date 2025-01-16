@@ -63,8 +63,32 @@ def fiche_nom(post_nom):
             # Rendre le template HTML et transmettre les données
             return render_template('read_data.html', data=data)
 
+@app.route('/livres')
+def livres():
+    conn = sqlite3.connect('database1.db')
+    cursor = conn.cursor()
+    cursor.execute('SELECT * FROM livres;')
+    data = cursor.fetchall()
+    conn.close()
+    return render_template('livres.html')
 
+@app.route('/utilisateurs')
+def utilisateurs():
+    conn = sqlite3.connect('database1.db')
+    cursor = conn.cursor()
+    cursor.execute('SELECT * FROM utilisateurs;')
+    data = cursor.fetchall()
+    conn.close()
+    return render_template('read_data1.html')
     
+@app.route('/emprunts')
+def utilisateurs():
+    conn = sqlite3.connect('database1.db')
+    cursor = conn.cursor()
+    cursor.execute('SELECT * FROM emprunts;')
+    data = cursor.fetchall()
+    conn.close()
+    return render_template('emprunts.html')
     
 @app.route('/consultation/')
 def ReadBDD():
@@ -84,14 +108,6 @@ def enregistrer_client():
     nom = request.form['nom']
     prenom = request.form['prenom']
 
-@app.route('/livres')
-def livres():
-    conn = sqlite3.connect('database1.db')
-    cursor = conn.cursor()
-    cursor.execute('SELECT * FROM livres;')
-    data = cursor.fetchall()
-    conn.close()
-    return render_template('read_data.html', data=data)
 
     # Connexion à la base de données
     conn = sqlite3.connect('database.db')
