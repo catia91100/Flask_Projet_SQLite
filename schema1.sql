@@ -15,8 +15,7 @@ titre TEXT NOT NULL,
 auteur TEXT NOT NULL,
 genre TEXT NOT NULL,
 annee_publication TEXT NOT NULL,
-stock_total ,
-stock_disponible
+stock_total 
   );
   
 DROP TABLE IF EXISTS emprunts;
