@@ -49,7 +49,7 @@ def Readfiche(post_id):
     # Rendre le template HTML et transmettre les données
     return render_template('read_data.html', data=data)
     
-@app.route('/fiche_nom/<int:post_nom>')
+@app.route('/fiche_nom/')
 def fiche_nom():
     if not est_authentifie():
         # Rediriger vers la page d'authentification si l'utilisateur n'est pas authentifié
