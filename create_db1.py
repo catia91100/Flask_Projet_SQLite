@@ -7,9 +7,9 @@ with open('schema1.sql') as f:
 
 cur = connection.cursor()
 
-cur.execute("INSERT INTO clients (nom, prenom, adresse) VALUES (?, ?, ?)",('DUPONT', 'Emilie', '123, Rue des Lilas, 75001 Paris'))
-cur.execute("INSERT INTO clients (nom, prenom, adresse) VALUES (?, ?, ?)",('LEROUX', 'Lucas', '456, Avenue du Soleil, 31000 Toulouse'))
-cur.execute("INSERT INTO clients (nom, prenom, adresse) VALUES (?, ?, ?)",('MARTIN', 'Amandine', '789, Rue des Érables, 69002 Lyon'))
+cur.execute("INSERT INTO utilisateurs (nom, prenom, adresse) VALUES (?, ?, ?)",('DUPONT', 'Emilie', '123, Rue des Lilas, 75001 Paris'))
+cur.execute("INSERT INTO utilisateurs (nom, prenom, adresse) VALUES (?, ?, ?)",('LEROUX', 'Lucas', '456, Avenue du Soleil, 31000 Toulouse'))
+cur.execute("INSERT INTO utilisateurs (nom, prenom, adresse) VALUES (?, ?, ?)",('MARTIN', 'Amandine', '789, Rue des Érables, 69002 Lyon'))
 cur.execute("INSERT INTO livres (titre, auteur, genre, annee_publication, stock_total) VALUES (?, ?, ?, ?, ?)",('Empire des anges', 'WEBER', 'Roman', '2000', '20'))
 cur.execute("INSERT INTO livres (titre, auteur, genre, annee_publication, stock_total) VALUES (?, ?, ?, ?, ?)",('LE HORLA', 'MAUPASSANT', 'Nouvelle Fantastique', '1887', '10'))
 cur.execute("INSERT INTO livres (titre, auteur, genre, annee_publication, stock_total) VALUES (?, ?, ?, ?, ?)",('Le Bourgeois Gentilhomme', 'MOLIERE', 'COMEDIE', '1670', '15'))
