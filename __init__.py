@@ -84,6 +84,15 @@ def enregistrer_client():
     nom = request.form['nom']
     prenom = request.form['prenom']
 
+@app.route('/livres')
+def livres():
+    conn = sqlite3.connect('database1.db')
+    cursor = conn.cursor()
+    cursor.execute('SELECT * FROM utilisateurs;')
+    data = cursor.fetchall()
+    conn.close()
+    return render_template('read_data.html', data=data)
+
     # Connexion à la base de données
     conn = sqlite3.connect('database.db')
     cursor = conn.cursor()
