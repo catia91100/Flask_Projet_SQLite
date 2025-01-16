@@ -23,12 +23,10 @@ DROP TABLE IF EXISTS emprunts;
 CREATE TABLE emprunts (
 id INTEGER PRIMARY KEY AUTOINCREMENT,
 created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-- id_emprunts (PK)
-- id_user (FK, Utilisateurs.id_user)
-- id_livre (FK, Livres.id_livre)
+- id_utilisateurs 
+- id_livres
 - date_emprunt
-- date_retour_prevue
-- date_retour_effective (NULL si pas encore retourné)
+- date_retour
   );
 
 
