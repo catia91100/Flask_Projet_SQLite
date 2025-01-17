@@ -70,8 +70,7 @@ def livres():
     cursor.execute('SELECT * FROM livres;')
     data = cursor.fetchall()
     conn.close()
-    return True
-    # return render_template('livres.html', data=data)
+    return render_template('livres.html', data=data)
 
 @app.route('/utilisateurs/')
 def utilisateurs():
